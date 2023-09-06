@@ -1,0 +1,44 @@
+sensor_distortion:
+  distortion_mod: 0
+  # 0:none, 1:rain on glass, 2:guss, 3:fog(no effect) 4:Enhance brightness 5:sun light 6:rain_on_lens
+  ########rain effect########
+  rain_on_window:
+    maxR: 50
+    minR: 25
+    maxDrops: 15
+    minDrops: 15
+    edge_darkratio: 0.3
+    return_label: 0
+    label_thres: 128
+    debug_flag: 0
+  ########rain effect########
+
+  ########increase brightness########
+  increase_brightness:
+    brightness_factor: 0
+  ########increase brightness########
+
+  ########sunshine_effect########
+  sunshine_effect:
+    factor: 2
+    percent: 3
+    x_offset: 0
+    y_offset: 200
+  ########sunshine_effect########
+
+  ########Gaussian_effect########
+  Gaussian_effect:
+    kernel: 15
+  #######Gaussian_effect########
+
+  #######rain_on_lens#######
+  rain_on_lens:
+    maxR: 30
+    minR: 30
+    Dropsnum: 15
+    blur_amount: 15
+  #######rain_on_lens#######
+
+
+  
+

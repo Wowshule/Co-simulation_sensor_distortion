@@ -1,0 +1,74 @@
+use_sim_time: true
+carla:
+  # the network connection for the python connection to CARLA
+  host: '172.17.0.1'
+  port: 2000
+  timeout: 30
+  passive: False
+  synchronous_mode: True
+  synchronous_mode_wait_for_vehicle_control_command: False
+  fixed_delta_seconds: 0.05
+  register_all_sensors: True
+  town: 'Town01'
+  
+
+  # configuration values for the ego vehicle
+  ego_vehicle:
+    # the role name of the vehicles that acts as ego vehicle for this ros bridge instance
+    # Only the vehicles within this list are controllable from within ROS.
+    # (the vehicle from CARLA is selected which has the attribute 'role_name' set to this value)
+    role_name: ["hero", "ego_vehicle"]
+  
+weather:
+  cloudiness: 1
+  precipitation: 0
+  sun_azimuth_angle: 130
+  fog_density: 0
+  precipitation_deposits: 0
+  sun_altitude_angle: 30
+  wind_intensity: 0
+  fog_distance: 0.75 
+  wetness: 0
+  dust_storm: 0
+  scattering_intensity: 1
+  mie_scattering_scale: 0.3
+  rayleigh_scattering_scale: 0.33
+  fog_falloff: 0
+
+
+  # WeatherParameters(cloudiness=60.000000, cloudiness=60.000000, precipitation=40.000000, precipitation_deposits=40.000000, wind_intensity=30.000000, sun_azimuth_angle=275.000000, sun_altitude_angle=20.000000, fog_density=5.000000, fog_distance=0.750000, fog_falloff=0.100000, wetness=80.000000, scattering_intensity=1.000000, mie_scattering_scale=0.030000, rayleigh_scattering_scale=0.033100, dust_storm=0.000000)
+
+
+
+
+# cloudiness (float)
+# Values range from 0 to 100, being 0 a clear sky and 100 one completely covered with clouds.
+# precipitation (float)
+# Rain intensity values range from 0 to 100, being 0 none at all and 100 a heavy rain.
+# precipitation_deposits (float)
+# Determines the creation of puddles. Values range from 0 to 100, being 0 none at all and 100 a road completely capped with water. Puddles are created with static noise, meaning that they will always appear at the same locations.
+# wind_intensity (float)
+# Controls the strenght of the wind with values from 0, no wind at all, to 100, a strong wind. The wind does affect rain direction and leaves from trees, so this value is restricted to avoid animation issues.
+# sun_azimuth_angle (float - degrees)
+# The azimuth angle of the sun. Values range from 0 to 360. Zero is an origin point in a sphere determined by Unreal Engine.
+# sun_altitude_angle (float - degrees)
+# Altitude angle of the sun. Values range from -90 to 90 corresponding to midnight and midday each.
+# fog_density (float)
+# Fog concentration or thickness. It only affects the RGB camera sensor. Values range from 0 to 100.
+# fog_distance (float - meters)
+# Fog start distance. Values range from 0 to infinite.
+# wetness (float)
+# Wetness intensity. It only affects the RGB camera sensor. Values range from 0 to 100.
+# fog_falloff (float)
+# Density of the fog (as in specific mass) from 0 to infinity. The bigger the value, the more dense and heavy it will be, and the fog will reach smaller heights. Corresponds to Fog Height Falloff in the UE docs.
+# If the value is 0, the fog will be lighter than air, and will cover the whole scene.
+# A value of 1 is approximately as dense as the air, and reaches normal-sized buildings.
+# For values greater than 5, the air will be so dense that it will be compressed on ground level.
+# scattering_intensity (float)
+# Controls how much the light will contribute to volumetric fog. When set to 0, there is no contribution.
+# mie_scattering_scale (float)
+# Controls interaction of light with large particles like pollen or air pollution resulting in a hazy sky with halos around the light sources. When set to 0, there is no contribution.
+# rayleigh_scattering_scale (float)
+# Controls interaction of light with small particles like air molecules. Dependent on light wavelength, resulting in a blue sky in the day or red sky in the evening.
+# dust_storm (float)
+# Determines the strength of the dust storm weather. Values range from 0 to 100.
